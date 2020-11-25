@@ -19,7 +19,7 @@ public class Practica2
 
         for (int i = 0; i < adivinar.Length; i++)
         {
-            ahorcado[i] = '_';
+            ahorcado[i] = '_'; sfdsdfdsfdsf
         }
 
         do
