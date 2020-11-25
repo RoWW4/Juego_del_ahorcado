@@ -16,10 +16,11 @@ public class Practica2
         adivinar = Console.ReadLine();
         char[] ahorcado = new char[adivinar.Length];
         int intentos = 0;
+        bool resuelto = false;
 
         for (int i = 0; i < adivinar.Length; i++)
         {
-            ahorcado[i] = '_'; sfdsdfdsfdsf
+            ahorcado[i] = '_';
         }
 
         do
@@ -28,8 +29,6 @@ public class Practica2
             Console.Write("Letra: ");
             letra = Convert.ToChar(Console.ReadLine());
 
-            int encontrado = 0;
-
             if (adivinar.Contains(letra))
             {
                 for (int i = 0; i < adivinar.Length; i++)
@@ -37,86 +36,76 @@ public class Practica2
                     if (adivinar.IndexOf(letra, i) >= 0)
                     {
                         ahorcado[adivinar.IndexOf(letra, i)] = letra;
-                        encontrado++;
-                    }
-
-                    else if (i == adivinar.Length - 1 && encontrado == 0)
-                    {
-                        intentos++;
                     }
                 }
             }
-
             else
             {
-                if (intentos > 0)
+                intentos++;
+            
+                switch (intentos)
                 {
-                    switch (intentos)
-                    {
-                        case 1:
-                            {
-                                Console.WriteLine("┌───┐");
-                                Console.WriteLine("│   o");
-                                Console.WriteLine("│");
-                                Console.WriteLine("│");
-                                Console.WriteLine("┴───────");
-                                break;
-                            }
-                        case 2:
-                            {
-                                Console.WriteLine("┌───┐");
-                                Console.WriteLine("│   o");
-                                Console.WriteLine("│  /");
-                                Console.WriteLine("│");
-                                Console.WriteLine("┴───────");
-                                break;
-                            }
-                        case 3:
-                            {
-                                Console.WriteLine("┌───┐");
-                                Console.WriteLine("│   o");
-                                Console.WriteLine("│  /|");
-                                Console.WriteLine("│");
-                                Console.WriteLine("┴───────");
-                                break;
-                            }
-                        case 4:
-                            {
-                                Console.WriteLine("┌───┐");
-                                Console.WriteLine("│   o");
-                                Console.WriteLine("│  /|\\");
-                                Console.WriteLine("│  ");
-                                Console.WriteLine("┴───────");
-                                break;
-                            }
-                        case 5:
-                            {
-                                Console.WriteLine("┌───┐");
-                                Console.WriteLine("│   o");
-                                Console.WriteLine("│  /|\\");
-                                Console.WriteLine("│  /");
-                                Console.WriteLine("┴───────");
-                                break;
-                            }
-                        case 6:
-                            {
-                                Console.WriteLine("┌───┐");
-                                Console.WriteLine("│   o");
-                                Console.WriteLine("│  /|\\");
-                                Console.WriteLine("│  / \\");
-                                Console.WriteLine("┴───────");
-                                break;
-                            }
+                    case 1:
+                        {
+                            Console.WriteLine("┌───┐");
+                            Console.WriteLine("│   o");
+                            Console.WriteLine("│");
+                            Console.WriteLine("│");
+                            Console.WriteLine("┴───────");
+                            break;
+                        }
+                    case 2:
+                        {
+                            Console.WriteLine("┌───┐");
+                            Console.WriteLine("│   o");
+                            Console.WriteLine("│  /");
+                            Console.WriteLine("│");
+                            Console.WriteLine("┴───────");
+                            break;
+                        }
+                    case 3:
+                        {
+                            Console.WriteLine("┌───┐");
+                            Console.WriteLine("│   o");
+                            Console.WriteLine("│  /|");
+                            Console.WriteLine("│");
+                            Console.WriteLine("┴───────");
+                            break;
+                        }
+                    case 4:
+                        {
+                            Console.WriteLine("┌───┐");
+                            Console.WriteLine("│   o");
+                            Console.WriteLine("│  /|\\");
+                            Console.WriteLine("│  ");
+                            Console.WriteLine("┴───────");
+                            break;
+                        }
+                    case 5:
+                        {
+                            Console.WriteLine("┌───┐");
+                            Console.WriteLine("│   o");
+                            Console.WriteLine("│  /|\\");
+                            Console.WriteLine("│  /");
+                            Console.WriteLine("┴───────");
+                            break;
+                        }
+                    case 6:
+                        {
+                            Console.WriteLine("┌───┐");
+                            Console.WriteLine("│   o");
+                            Console.WriteLine("│  /|\\");
+                            Console.WriteLine("│  / \\");
+                            Console.WriteLine("┴───────");
+                            break;
+                        }
 
-                    }
                 }
             }            
 
-           
-
-            for (int k = 0; k < ahorcado.Length; k++)
+            for (int i = 0; i < ahorcado.Length; i++)
             {
-                Console.Write(ahorcado[k]);
+                Console.Write(ahorcado[i]);
             }
 
         } while (intentos < 6);
@@ -129,6 +118,7 @@ public class Practica2
 
         else
         {
+
             Console.WriteLine("¡¡¡ENHORABUENA!!!");
         }
     }
