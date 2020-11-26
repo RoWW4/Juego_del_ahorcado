@@ -99,7 +99,6 @@ public class Practica2
                             Console.WriteLine("┴───────");
                             break;
                         }
-
                 }
             }            
 
@@ -118,7 +117,6 @@ public class Practica2
 
         else
         {
-
             Console.WriteLine("¡¡¡ENHORABUENA!!!");
         }
     }
